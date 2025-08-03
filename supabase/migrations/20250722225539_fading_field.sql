@@ -1,0 +1,19 @@
+@@ .. @@
+ -- Sample products data
+ INSERT INTO products (name, description, price, image_url, category, in_stock, featured) VALUES
+-('Amplificador Yamaha A-S301', 'Amplificador integrado estéreo de alta fidelidad con entrada phono', 850000, 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', 'Amplificadores', true, true),
+-('Parlantes JBL Professional', 'Sistema de parlantes profesionales para eventos', 1200000, 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800', 'Parlantes', true, false),
+-('Micrófono Shure SM58', 'Micrófono dinámico cardioide para voces', 320000, 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800', 'Micrófono', true, true),
+-('Consola Behringer X32', 'Consola digital de 32 canales', 2800000, 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800', 'Consolas', true, false),
+-('Proyector Epson PowerLite', 'Proyector LCD de 3500 lúmenes', 1500000, 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800', 'Proyectores', true, true),
+-('Luces LED Par 64', 'Sistema de iluminación LED RGB', 450000, 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800', 'Iluminación', true, false),
+-('Cable XLR Profesional', 'Cable balanceado XLR de 5 metros', 85000, 'https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=800', 'Accesorios', true, false),
+-('Auriculares Sony MDR-7506', 'Auriculares profesionales de estudio', 280000, 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800', 'Auriculares', true, true);
++('RECEPTOR DENON AVR-X6700H E2 NUEVO', 'Receptor AV de 11.2 canales con soporte 8K y Dolby Atmos', 4500000, 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800', 'Amplificadores', true, true),
++('MONITOR POLK XT90 TORRE NEGRA', 'Torre de piso con tecnología Polk Turbine Cone', 1800000, 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800', 'Audio profesional', true, false),
++('BOWERS & WILKINS ASW610XP BK', 'Subwoofer activo de 10 pulgadas con amplificador Class D', 2200000, 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800', 'Alta fidelidad', true, false),
++('DENON AHC-10PL BK NUEVOS AURICULARES', 'Auriculares in-ear con cancelación de ruido activa', 450000, 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800', 'Auriculares', true, true),
++('MICRÓFONO SHURE 555H SERIE II - VINTAGE', 'Micrófono dinámico vintage de la serie Unidyne', 850000, 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=800', 'Micrófono', true, false),
++('AURICULARES SUPRAAURALES PIONEER DJ HDJ-X5K', 'Auriculares profesionales para DJ con drivers de 40mm', 380000, 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800', 'DJ', true, false),
++('SUBWOOFER KLIPSCH R-120SW - SUBWOOFER DE 12 PULGADAS', 'Subwoofer potente con woofer de fibra de cobre IMG', 1650000, 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800', 'Cine en casa', true, true),
++('MONITOR DE AUDIO POLK XT35 CAJA CENTRAL - NEGRO', 'Altavoz central de 3 vías con tweeter de cúpula de seda', 720000, 'https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=800', 'Cine en casa', true, false);
