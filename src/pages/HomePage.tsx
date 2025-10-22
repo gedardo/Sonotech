@@ -1,4 +1,4 @@
-import { ImageSlider } from '../components/ImageSlider';
+import { VideoHero } from '../components/VideoHero';
 import { ProductGrid } from '../components/ProductGrid';
 import { Services } from '../components/Services';
 import { Header } from '../components/Header';
@@ -8,7 +8,7 @@ export function HomePage() {
   return (
     <div>
       <div className="relative h-screen w-full">
-        <ImageSlider />
+        <VideoHero />
         <div className="absolute top-0 left-0 w-full z-50">
           <Header transparent />
         </div>

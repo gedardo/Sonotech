@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SmartLogo } from './Logo';
 
 interface HeaderProps {
   transparent?: boolean;
@@ -20,57 +21,55 @@ export function Header({ transparent = false }: HeaderProps) {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-14 h-10 flex items-center justify-center">
-            <img
-                src="https://qmlzpanjqsxozucxdegr.supabase.co/storage/v1/object/sign/imagenes/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yZGRmNjdjZC03ZDRmLTQ1NGItODY0NC1iOThlNjhkM2NiYjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZW5lcy9sb2dvLmpwZyIsImlhdCI6MTc1MzM2ODk0NCwiZXhwIjoxNzg0OTA0OTQ0fQ.wNv1qYmaQtZ_NVtL9hgRrKS0vqiY9Kvx_NVw37_aJrs"
-                alt="Logo Sonotech"
-                className="rounded-2xl shadow-2xl w-full"
-              />
-            </div>
-            <span className={`text-2xl font-bold ${
+          <Link to="/" className="flex items-center space-x-3 group">
+            <SmartLogo 
+              backgroundColor={transparent ? 'transparent' : 'light'}
+              size="xl"
+              className="group-hover:scale-110 transition-transform duration-300"
+            />
+            {/*<span className={`text-2xl font-bold transition-all duration-300 ${
               transparent 
                 ? 'text-white drop-shadow-lg' 
-                : 'bg-black bg-clip-text text-transparent'
+                : 'text-primary-500'
             }`}>
-              Sonotech
-            </span>
+              Levelpro
+            </span>*/}
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className={`font-medium transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300 drop-shadow-md' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300 drop-shadow-md' 
+                : 'text-accent-dark hover:text-primary-500'
             }`}>
               Inicio
             </Link>
             <Link to="/productos" className={`font-medium transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300 drop-shadow-md' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300 drop-shadow-md' 
+                : 'text-accent-dark hover:text-primary-500'
             }`}>
               Productos
             </Link>
             <Link to="/servicios" className={`font-medium transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300 drop-shadow-md' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300 drop-shadow-md' 
+                : 'text-accent-dark hover:text-primary-500'
             }`}>
               Servicios
             </Link>
             <Link to="/nosotros" className={`font-medium transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300 drop-shadow-md' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300 drop-shadow-md' 
+                : 'text-accent-dark hover:text-primary-500'
             }`}>
               Nosotros
             </Link>
             <Link to="/contacto" className={`font-medium transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300 drop-shadow-md' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300 drop-shadow-md' 
+                : 'text-accent-dark hover:text-primary-500'
             }`}>
               Contacto
             </Link>
@@ -85,7 +84,7 @@ export function Header({ transparent = false }: HeaderProps) {
               <input
                 type="text"
                 placeholder="Buscar productos..."
-                className={`pl-10 pr-4 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${
+                className={`pl-10 pr-4 py-2 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all ${
                   transparent 
                     ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 text-white placeholder-gray-300' 
                     : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-500'
@@ -107,7 +106,7 @@ export function Header({ transparent = false }: HeaderProps) {
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                 transparent 
                   ? 'bg-white bg-opacity-20 backdrop-blur-sm text-white hover:bg-opacity-30 border border-white border-opacity-30' 
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-primary-500 text-white hover:bg-primary-600'
               }`}
             >
               <User className="w-4 h-4" />
@@ -120,8 +119,8 @@ export function Header({ transparent = false }: HeaderProps) {
             onClick={toggleMenu}
             className={`md:hidden p-2 transition-colors ${
               transparent 
-                ? 'text-white hover:text-blue-300' 
-                : 'text-gray-700 hover:text-blue-600'
+                ? 'text-white hover:text-primary-300' 
+                : 'text-gray-700 hover:text-primary-500'
             }`}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -137,32 +136,32 @@ export function Header({ transparent = false }: HeaderProps) {
           }`}>
             <nav className="flex flex-col space-y-4 mt-4">
               <Link to="/" className={`font-medium transition-colors ${
-                transparent ? 'text-white hover:text-blue-300' : 'text-gray-700 hover:text-blue-600'
+                transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'
               }`}>
                 Inicio
               </Link>
               <Link to="/productos" className={`font-medium transition-colors ${
-                transparent ? 'text-white hover:text-blue-300' : 'text-gray-700 hover:text-blue-600'
+                transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'
               }`}>
                 Productos
               </Link>
               <Link to="/servicios" className={`font-medium transition-colors ${
-                transparent ? 'text-white hover:text-blue-300' : 'text-gray-700 hover:text-blue-600'
+                transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'
               }`}>
                 Servicios
               </Link>
               <Link to="/nosotros" className={`font-medium transition-colors ${
-                transparent ? 'text-white hover:text-blue-300' : 'text-gray-700 hover:text-blue-600'
+                transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'
               }`}>
                 Nosotros
               </Link>
               <Link to="/contacto" className={`font-medium transition-colors ${
-                transparent ? 'text-white hover:text-blue-300' : 'text-gray-700 hover:text-blue-600'
+                transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'
               }`}>
                 Contacto
               </Link>
               <Link to="/admin" className={`font-medium transition-colors ${
-                transparent ? 'text-blue-300 hover:text-white' : 'text-blue-600 hover:text-blue-800'
+                transparent ? 'text-primary-300 hover:text-white' : 'text-primary-500 hover:text-primary-700'
               }`}>
                 Administración
               </Link>

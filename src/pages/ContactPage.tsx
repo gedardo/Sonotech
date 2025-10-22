@@ -41,7 +41,7 @@ ${formData.message}
 
   const handleWhatsAppClick = () => {
     const phone = "543813698748";
-    const message = "Hola! Me gustaría obtener más información sobre Sonotech.";
+    const message = "Hola! Me gustaría obtener más información sobre Levelpro.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -81,10 +81,10 @@ ${formData.message}
                     </div>
                     <div>
                       <a 
-                        href="mailto:contacto@sonotech.com.py"
+                        href="mailto:contacto@levelpro.com.py"
                         className="text-lg text-gray-700 hover:text-blue-600 transition-colors"
                       >
-                        contacto@sonotech.com.ar
+                        contacto@levelpro.com.ar
                       </a>
                     </div>
                   </div>

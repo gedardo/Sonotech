@@ -52,7 +52,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
 
       <div className={compact ? 'p-4' : 'p-6'}>
         {/* Brand */}
-        <p className="text-xs text-blue-600 font-medium mb-1">
+        <p className="text-xs text-primary-600 font-medium mb-1">
           {product.brand}
         </p>
         
@@ -76,7 +76,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <div className="space-y-2">
             <Link
               to={`/producto/${product.id}`}
-              className="block w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded font-medium transition-colors text-sm"
+              className="block w-full bg-primary-500 hover:bg-primary-600 text-white py-2 px-4 rounded font-medium transition-colors text-sm"
             >
               Ver más
             </Link>

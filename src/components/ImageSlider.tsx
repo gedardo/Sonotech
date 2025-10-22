@@ -16,7 +16,7 @@ export function ImageSlider() {
     {
       id: 1,
       image: "https://qmlzpanjqsxozucxdegr.supabase.co/storage/v1/object/sign/imagenes/slider2.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yZGRmNjdjZC03ZDRmLTQ1NGItODY0NC1iOThlNjhkM2NiYjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZW5lcy9zbGlkZXIyLndlYnAiLCJpYXQiOjE3NTMzNzE5NTcsImV4cCI6MTc4NDkwNzk1N30.w79MxNboAjuMvDmlbAIRtgzETTQDTX-VYX5A9JFx0Ck",
-      title: "Sonotech",
+      title: "Levelpro",
       subtitle: "Equipos Profesionales",
       description: "Descubre nuestra línea completa de equipos audiovisuales para eventos profesionales"
     },
@@ -69,7 +69,7 @@ export function ImageSlider() {
 
   const handleWhatsApp = () => {
     const phone = "595984123456";
-    const message = "Hola! Me interesa conocer más sobre los equipos audiovisuales de Sonotech.";
+    const message = "Hola! Me interesa conocer más sobre los equipos audiovisuales de Levelpro.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };

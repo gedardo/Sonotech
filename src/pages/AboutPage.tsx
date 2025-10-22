@@ -50,7 +50,7 @@ export function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Conoce Sonotech
+              Conoce Levelpro
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100">
               Más de 15 años liderando el mercado de equipos audiovisuales en Argentina
@@ -71,7 +71,7 @@ export function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Fundada en 2008, <strong>Sonotech</strong> nació 
+                    Fundada en 2008, <strong>Levelpro</strong> nació 
                     con la visión de democratizar el acceso a equipos audiovisuales de alta calidad 
                     en el mercado. Lo que comenzó como una pequeña tienda especializada 
                     en equipos de audio, se ha convertido en el referente principal para 
@@ -86,7 +86,7 @@ export function AboutPage() {
                   </p>
                   <p>
                     Hoy, con más de 1000 clientes satisfechos y más de 500 eventos exitosos, 
-                    Sonotech continúa innovando y creciendo, manteniéndose siempre a la vanguardia 
+                    Levelpro continúa innovando y creciendo, manteniéndose siempre a la vanguardia 
                     de la tecnología audiovisual para brindar las mejores soluciones a nuestros clientes.
                   </p>
                 </div>
@@ -128,7 +128,7 @@ export function AboutPage() {
               <div className="relative">
                 <img
                   src="https://qmlzpanjqsxozucxdegr.supabase.co/storage/v1/object/sign/imagenes/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yZGRmNjdjZC03ZDRmLTQ1NGItODY0NC1iOThlNjhkM2NiYjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZW5lcy9sb2dvLmpwZyIsImlhdCI6MTc1MzM2Nzg2MSwiZXhwIjoxNzg0OTAzODYxfQ.1pfd63UMJhamvqg22vH2vjhflv63_s8mc4-G9t8VBWU"
-                  alt="Historia de Sonotech"
+                  alt="Historia de Levelpro"
                   className="rounded-2xl shadow-2xl w-full"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
@@ -203,7 +203,7 @@ export function AboutPage() {
                         <Users className="w-6 h-6 text-blue-600" />
                       </div>
                       <h4 className="font-semibold text-gray-900 mb-2">Contacto</h4>
-                      <p className="text-gray-600">+54 381 369-8748<br />contacto@sonotech.com.ar</p>
+                      <p className="text-gray-600">+54 381 369-8748<br />contacto@levelpro.com.ar</p>
                     </div>
                   </div>
                 </div>

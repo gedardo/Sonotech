@@ -39,10 +39,10 @@ export function Services() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-accent-dark mb-4">
             Nuestros Servicios
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-accent-gray max-w-2xl mx-auto">
             Soluciones completas en audio y video para todo tipo de eventos y necesidades
           </p>
         </div>
@@ -51,15 +51,15 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group text-center p-8 rounded-xl bg-gray-50 hover:bg-blue-50 transition-all duration-300 hover:shadow-lg"
+              className="group text-center p-8 rounded-xl bg-gray-50 hover:bg-primary-50 transition-all duration-300 hover:shadow-lg hover-lift"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-6 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                 <service.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-accent-dark mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-accent-gray leading-relaxed">
                 {service.description}
               </p>
             </div>

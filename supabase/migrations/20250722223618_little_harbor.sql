@@ -1,5 +1,5 @@
 /*
-  # Crear tabla de productos para Sonotech
+  # Crear tabla de productos para Levelpro
 
   1. Nueva tabla
     - `products`
@@ -80,7 +80,7 @@ CREATE TRIGGER update_products_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
 
--- Insert sample products for Sonotech
+-- Insert sample products for Levelpro
 INSERT INTO products (name, description, price, image_url, category, in_stock, featured) VALUES
   (
     'Amplificador Pioneer DJ DJM-900NXS2',

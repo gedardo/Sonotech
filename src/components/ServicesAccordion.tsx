@@ -36,7 +36,7 @@ export function ServicesAccordion() {
         'Monitoreo en tiempo real',
         'Soporte técnico durante el evento'
       ],
-      whatsappMessage: 'Hola! Me interesa obtener más información sobre el servicio de Sonorización de Eventos de Sonotech.'
+      whatsappMessage: 'Hola! Me interesa obtener más información sobre el servicio de Sonorización de Eventos de Levelpro.'
     },
     {
       id: 'alquiler',
@@ -58,7 +58,7 @@ export function ServicesAccordion() {
         'Consolas de mezcla',
         'Cables y conectores'
       ],
-      whatsappMessage: 'Hola! Me gustaría conocer las opciones de alquiler de equipos audiovisuales de Sonotech.'
+      whatsappMessage: 'Hola! Me gustaría conocer las opciones de alquiler de equipos audiovisuales de Levelpro.'
     },
     {
       id: 'audiovisual',
@@ -292,7 +292,7 @@ export function ServicesAccordion() {
               Nuestro equipo está listo para asesorarte.
             </p>
             <button
-              onClick={() => handleWhatsApp('Hola! Me gustaría obtener información sobre servicios personalizados de Sonotech.')}
+              onClick={() => handleWhatsApp('Hola! Me gustaría obtener información sobre servicios personalizados de Levelpro.')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center space-x-2 mx-auto"
             >
               <MessageCircle className="w-5 h-5" />

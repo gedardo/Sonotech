@@ -33,10 +33,10 @@ export function BrandsSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-accent-dark mb-4">
               NUESTRAS MARCAS
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-accent-gray">
               Trabajamos con las marcas más prestigiosas del mundo del audio profesional
             </p>
           </div>
@@ -53,7 +53,7 @@ export function BrandsSection() {
                     alt={brand.name}
                     className="w-full h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-125"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
                 </div>
                 {/* Efectos hover divertidos */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-300"></div>
@@ -70,11 +70,11 @@ export function BrandsSection() {
 
           {/* Llamado a la acción */}
           <div className="text-center mt-12">
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-accent-dark mb-4">
                 ¿Buscas una marca específica?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-accent-gray mb-6">
                 Contamos con una amplia red de proveedores. Si no encuentras la marca que buscas, 
                 contáctanos y te ayudaremos a conseguirla.
               </p>
@@ -85,7 +85,7 @@ export function BrandsSection() {
                   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
                   window.open(url, '_blank');
                 }}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors hover-lift"
               >
                 Consultar Disponibilidad
               </button>

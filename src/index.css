@@ -17,3 +17,51 @@
 body {
   font-family: var(--font-ethnocentric);
 }
+
+/* Estilos personalizados para la nueva paleta de colores */
+@layer components {
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-500;
+  }
+  
+  .gradient-primary-light {
+    @apply bg-gradient-to-r from-primary-400 to-primary-300;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent;
+  }
+  
+  .shadow-primary {
+    box-shadow: 0 10px 25px -5px rgba(70, 7, 141, 0.1), 0 10px 10px -5px rgba(70, 7, 141, 0.04);
+  }
+  
+  .border-primary {
+    @apply border-primary-500;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efectos de hover modernos */
+.hover-lift {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-300 hover:shadow-primary;
+}
