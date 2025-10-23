@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ProductFilters } from '../components/ProductFilters';
 import { ProductCard } from '../components/ProductCard';
 import { useProducts } from '../hooks/useProducts';
@@ -6,19 +7,43 @@ import { useProducts } from '../hooks/useProducts';
 export function ProductsPage() {
   const { products, loading, error } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const categories = useMemo(() => {
-    const uniqueCategories = [...new Set(products.map(p => p.category))];
-    return uniqueCategories;
-  }, [products]);
+  // Obtener parámetro de búsqueda de la URL
+  useEffect(() => {
+    const searchParam = searchParams.get('search');
+    if (searchParam) {
+      setSearchQuery(searchParam);
+      // Limpiar otros filtros cuando hay búsqueda
+      setSelectedCategory('');
+      setSelectedBrand('');
+    }
+  }, [searchParams]);
 
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = products;
 
+    // Filter by search query
+    if (searchQuery) {
+      filtered = filtered.filter(product => 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
     // Filter by category
     if (selectedCategory) {
       filtered = filtered.filter(product => product.category === selectedCategory);
+    }
+
+    // Filter by brand
+    if (selectedBrand) {
+      filtered = filtered.filter(product => product.brand === selectedBrand);
     }
 
     // Sort products
@@ -37,7 +62,7 @@ export function ProductsPage() {
     });
 
     return sorted;
-  }, [products, selectedCategory, sortBy]);
+  }, [products, searchQuery, selectedCategory, selectedBrand, sortBy]);
 
   if (loading) {
     return (
@@ -71,9 +96,11 @@ export function ProductsPage() {
       <div className="flex">
         {/* Sidebar Filters */}
         <ProductFilters
-          categories={categories}
+          products={products}
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
+          selectedBrand={selectedBrand}
+          onBrandChange={setSelectedBrand}
           sortBy={sortBy}
           onSortChange={setSortBy}
         />
@@ -83,12 +110,25 @@ export function ProductsPage() {
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Mostrando todos los productos
+              {searchQuery ? `Resultados para "${searchQuery}"` : 'Mostrando todos los productos'}
             </h1>
             <p className="text-gray-600">
               {filteredAndSortedProducts.length} productos encontrados
+              {searchQuery && ` para "${searchQuery}"`}
               {selectedCategory && ` en "${selectedCategory}"`}
+              {selectedBrand && ` de la marca "${selectedBrand}"`}
             </p>
+            {searchQuery && (
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSearchParams({});
+                }}
+                className="mt-2 text-primary-600 hover:text-primary-700 font-medium text-sm"
+              >
+                ✕ Limpiar búsqueda
+              </button>
+            )}
           </div>
 
           {/* Products Grid */}
@@ -106,15 +146,40 @@ export function ProductsPage() {
             <div className="text-center py-12">
               <p className="text-gray-600 text-lg">
                 No se encontraron productos
+                {searchQuery && ` para "${searchQuery}"`}
                 {selectedCategory && ` en la categoría "${selectedCategory}"`}
+                {selectedBrand && ` de la marca "${selectedBrand}"`}
               </p>
-              {selectedCategory && (
-                <button
-                  onClick={() => setSelectedCategory('')}
-                  className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Ver todos los productos
-                </button>
+              {(searchQuery || selectedCategory || selectedBrand) && (
+                <div className="mt-4 space-x-2">
+                  {searchQuery && (
+                    <button
+                      onClick={() => {
+                        setSearchQuery('');
+                        setSearchParams({});
+                      }}
+                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mr-2"
+                    >
+                      Limpiar búsqueda
+                    </button>
+                  )}
+                  {selectedCategory && (
+                    <button
+                      onClick={() => setSelectedCategory('')}
+                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mr-2"
+                    >
+                      Limpiar categoría
+                    </button>
+                  )}
+                  {selectedBrand && (
+                    <button
+                      onClick={() => setSelectedBrand('')}
+                      className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Limpiar marca
+                    </button>
+                  )}
+                </div>
               )}
             </div>
           )}

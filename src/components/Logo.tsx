@@ -47,7 +47,7 @@ export function Logo({ variant = 'auto', size = 'md', className = '' }: LogoProp
 // Componente de logo inteligente que detecta el fondo
 interface SmartLogoProps {
   backgroundColor?: 'light' | 'dark' | 'purple' | 'transparent';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }
 

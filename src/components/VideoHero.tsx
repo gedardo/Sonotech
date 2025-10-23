@@ -53,7 +53,7 @@ export function VideoHero() {
         <div className="absolute inset-0 bg-black bg-opacity-40" />
       </div>
 
-      {/* Content */}
+      {/* Content 
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
           <div className="space-y-6">
@@ -84,7 +84,7 @@ export function VideoHero() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Video Controls */}
       <div className="absolute bottom-8 right-8 z-20">
@@ -96,7 +96,7 @@ export function VideoHero() {
         </button>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-sm font-medium drop-shadow-md">Desliza</span>
@@ -104,7 +104,7 @@ export function VideoHero() {
             <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Stats Overlay */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 hidden lg:block">

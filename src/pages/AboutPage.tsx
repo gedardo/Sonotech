@@ -1,5 +1,5 @@
-import React from 'react';
 import { MapPin, Calendar, Users, Award, ExternalLink } from 'lucide-react';
+import { SmartLogo } from '../components/Logo';
 
 export function AboutPage() {
   const handleMapClick = () => {
@@ -9,39 +9,6 @@ export function AboutPage() {
     window.open(mapsUrl, '_blank');
   };
 
-  const brands = [
-    { name: 'Shure', logo: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Pioneer', logo: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Denon', logo: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Marantz', logo: 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Denon DJ', logo: 'https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Rane', logo: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Q Acoustics', logo: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Roksan', logo: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Monitor Audio', logo: 'https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Polk Audio', logo: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Sonos', logo: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Klipsch', logo: 'https://images.pexels.com/photos/1181414/pexels-photo-1181414.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Onkyo', logo: 'https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'SVS', logo: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Dynaudio', logo: 'https://images.pexels.com/photos/1181348/pexels-photo-1181348.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'SpeakerCraft', logo: 'https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Cambridge Audio', logo: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Hegel', logo: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Numark', logo: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Pro-Ject', logo: 'https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Vincent Audio', logo: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Panamax', logo: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Chord Company', logo: 'https://images.pexels.com/photos/1181414/pexels-photo-1181414.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Pioneer DJ', logo: 'https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Accuphase', logo: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Akai', logo: 'https://images.pexels.com/photos/1181348/pexels-photo-1181348.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Alesis', logo: 'https://images.pexels.com/photos/1181717/pexels-photo-1181717.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'M-Audio', logo: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Velodyne', logo: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Pioneer Elite', logo: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'EverSolo', logo: 'https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -126,10 +93,9 @@ export function AboutPage() {
 
               {/* Image */}
               <div className="relative">
-                <img
-                  src="https://qmlzpanjqsxozucxdegr.supabase.co/storage/v1/object/sign/imagenes/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yZGRmNjdjZC03ZDRmLTQ1NGItODY0NC1iOThlNjhkM2NiYjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZW5lcy9sb2dvLmpwZyIsImlhdCI6MTc1MzM2Nzg2MSwiZXhwIjoxNzg0OTAzODYxfQ.1pfd63UMJhamvqg22vH2vjhflv63_s8mc4-G9t8VBWU"
-                  alt="Historia de Levelpro"
-                  className="rounded-2xl shadow-2xl w-full"
+                <SmartLogo
+                  size="xl"
+                  className="rounded-2xl shadow-2xl w-full h-full object-contain"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
                   <div className="text-center">
@@ -158,25 +124,38 @@ export function AboutPage() {
 
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="relative">
-                {/* Map Placeholder */}
-                <div 
-                  className="h-96 bg-gray-200 relative cursor-pointer group"
-                  onClick={handleMapClick}
-                >
-                  <img
-                    src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
-                    alt="Mapa de ubicación"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center group-hover:bg-opacity-40 transition-all">
-                    <div className="text-center text-white">
-                      <MapPin className="w-16 h-16 mx-auto mb-4" />
-                      <h3 className="text-2xl font-bold mb-2">Av. Jujuy 1162</h3>
-                      <p className="text-lg">San Miguel de Tucumán - Argentina</p>
-                      <div className="flex items-center justify-center mt-4 space-x-2 text-blue-200 group-hover:text-white transition-colors">
-                        <ExternalLink className="w-5 h-5" />
-                        <span>Ver en Google Maps</span>
+                {/* Interactive Map */}
+                <div className="relative h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.123456789!2d-65.223456789!3d-26.823456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1f%3A0xf8606cd659b8e3f4!2sAv.%20Jujuy%201162%2C%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Levelpro - Av. Jujuy 1162, San Miguel de Tucumán"
+                  ></iframe>
+                  
+                  {/* Map Overlay */}
+                  <div className="absolute top-4 left-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-5 h-5 text-primary-600" />
+                      <div>
+                        <p className="font-semibold text-gray-800 text-sm">Levelpro</p>
+                        <p className="text-xs text-gray-600">Av. Jujuy 1162</p>
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Click to open in Google Maps */}
+                  <div 
+                    className="absolute bottom-4 right-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-3 shadow-lg cursor-pointer hover:bg-opacity-100 transition-all group"
+                    onClick={handleMapClick}
+                  >
+                    <div className="flex items-center space-x-2 text-gray-700 group-hover:text-primary-600 transition-colors">
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm font-medium">Ver en Google Maps</span>
                     </div>
                   </div>
                 </div>
@@ -213,7 +192,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Brands Section */}
+      {/* Brands Section 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -241,11 +220,9 @@ export function AboutPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
                   </div>
                   
-                  {/* Fun hover effects */}
                   <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-300"></div>
                   <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-300 delay-100"></div>
                   
-                  {/* Brand name on hover */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="bg-black bg-opacity-80 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {brand.name}
@@ -255,7 +232,6 @@ export function AboutPage() {
               ))}
             </div>
 
-            {/* Call to Action */}
             <div className="text-center mt-12">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -280,7 +256,7 @@ export function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 }

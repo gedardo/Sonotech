@@ -17,8 +17,8 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <SmartLogo backgroundColor="dark" size="sm" />
-              <span className="text-xl font-bold text-primary-300">Levelpro</span>
+              <SmartLogo size="xl" />
+              <SmartLogo backgroundColor="dark" size="xl" />
             </div>
             <p className="text-gray-300 leading-relaxed">
               Líderes en equipos audiovisuales en Argentina. Más de 15 años brindando 

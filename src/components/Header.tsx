@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Menu, X, User, Search } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { SmartLogo } from './Logo';
 
 interface HeaderProps {
@@ -9,8 +9,22 @@ interface HeaderProps {
 
 export function Header({ transparent = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/productos?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+    }
+  };
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -77,20 +91,22 @@ export function Header({ transparent = false }: HeaderProps) {
 
           {/* Right Section */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="relative">
+            <form onSubmit={handleSearch} className="relative">
               <Search className={`w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 ${
                 transparent ? 'text-gray-300' : 'text-gray-400'
               }`} />
               <input
                 type="text"
                 placeholder="Buscar productos..."
+                value={searchQuery}
+                onChange={handleSearchInputChange}
                 className={`pl-10 pr-4 py-2 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all ${
                   transparent 
                     ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 text-white placeholder-gray-300' 
                     : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-500'
                 }`}
               />
-            </div>
+            </form>
             {/*<button className={`relative p-2 transition-colors ${
               transparent 
                 ? 'text-white hover:text-blue-300' 
@@ -134,6 +150,26 @@ export function Header({ transparent = false }: HeaderProps) {
               ? 'border-white border-opacity-30 bg-black bg-opacity-50 backdrop-blur-md rounded-lg' 
               : 'border-gray-200'
           }`}>
+            {/* Mobile Search */}
+            <form onSubmit={handleSearch} className="mb-4">
+              <div className="relative">
+                <Search className={`w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 ${
+                  transparent ? 'text-gray-300' : 'text-gray-400'
+                }`} />
+                <input
+                  type="text"
+                  placeholder="Buscar productos..."
+                  value={searchQuery}
+                  onChange={handleSearchInputChange}
+                  className={`w-full pl-10 pr-4 py-2 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all ${
+                    transparent 
+                      ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 text-white placeholder-gray-300' 
+                      : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-500'
+                  }`}
+                />
+              </div>
+            </form>
+
             <nav className="flex flex-col space-y-4 mt-4">
               <Link to="/" className={`font-medium transition-colors ${
                 transparent ? 'text-white hover:text-primary-300' : 'text-gray-700 hover:text-primary-500'

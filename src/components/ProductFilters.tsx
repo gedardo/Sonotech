@@ -1,47 +1,62 @@
-import React, { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Product } from '../types';
 
 interface ProductFiltersProps {
-  categories: string[];
+  products: Product[];
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
+  selectedBrand: string;
+  onBrandChange: (brand: string) => void;
   sortBy: string;
   onSortChange: (sort: string) => void;
 }
 
 export function ProductFilters({ 
-  categories, 
+  products, 
   selectedCategory, 
   onCategoryChange, 
+  selectedBrand,
+  onBrandChange,
   sortBy, 
   onSortChange 
 }: ProductFiltersProps) {
   const [isCategoriesOpen, setCategoriesOpen] = useState(true);
   const [isBrandsOpen, setBrandsOpen] = useState(true);
 
-  const categoryData = [
-    { name: 'Todos', count: 0 },
-    { name: 'Amplificadores', count: 28 },
-    { name: 'Audio profesional', count: 81 },
-    { name: 'Alta fidelidad', count: 73 },
-    { name: 'Cine en casa', count: 68 },
-    { name: 'Micrófono', count: 60 },
-    { name: 'Accesorios', count: 42 },
-    { name: 'DJ', count: 31 },
-    { name: 'Receptor', count: 19 },
-    { name: 'General', count: 15 },
-    { name: 'Cables', count: 13 },
-    { name: 'Auriculares', count: 13 },
-    { name: 'Tocadiscos', count: 8 },
-    { name: 'Reproductor de CD', count: 3 },
-    { name: 'Red', count: 3 },
-    { name: 'Convertidor', count: 1 }
-  ];
+  // Generar categorías y marcas desde los productos reales
+  const categoryData = useMemo(() => {
+    const categoryCounts: Record<string, number> = {};
+    
+    products.forEach(product => {
+      if (product.category) {
+        categoryCounts[product.category] = (categoryCounts[product.category] || 0) + 1;
+      }
+    });
 
-  const brands = [
-    'Denon', 'Polk Audio', 'Bowers & Wilkins', 'Shure', 'Pioneer DJ', 
-    'Klipsch', 'Sony', 'Audio-Technica', 'Yamaha', 'JBL'
-  ];
+    const categoriesWithCounts = Object.entries(categoryCounts)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
+
+    return [
+      { name: 'Todos', count: products.length },
+      ...categoriesWithCounts
+    ];
+  }, [products]);
+
+  const brands = useMemo(() => {
+    const brandCounts: Record<string, number> = {};
+    
+    products.forEach(product => {
+      if (product.brand) {
+        brandCounts[product.brand] = (brandCounts[product.brand] || 0) + 1;
+      }
+    });
+
+    return Object.entries(brandCounts)
+      .map(([brand, count]) => ({ brand, count }))
+      .sort((a, b) => b.count - a.count);
+  }, [products]);
 
   return (
     <div className="w-80 bg-white border-r border-gray-200 p-6 h-full overflow-y-auto">
@@ -110,12 +125,29 @@ export function ProductFilters({
         
         {isBrandsOpen && (
           <div className="space-y-2">
-            {brands.map((brand) => (
+            <button
+              onClick={() => onBrandChange('')}
+              className={`flex items-center justify-between w-full text-left px-2 py-1 rounded text-sm transition-colors ${
+                selectedBrand === ''
+                  ? 'bg-blue-50 text-blue-700'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              <span>Todas las marcas</span>
+              <span className="text-gray-400">({products.length})</span>
+            </button>
+            {brands.map(({ brand, count }) => (
               <button
                 key={brand}
-                className="block w-full text-left px-2 py-1 rounded text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+                onClick={() => onBrandChange(brand)}
+                className={`flex items-center justify-between w-full text-left px-2 py-1 rounded text-sm transition-colors ${
+                  selectedBrand === brand
+                    ? 'bg-blue-50 text-blue-700'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
               >
-                {brand}
+                <span>{brand}</span>
+                <span className="text-gray-400">({count})</span>
               </button>
             ))}
           </div>
