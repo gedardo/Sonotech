@@ -1,17 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { ArrowRight, Play, Volume2, VolumeX } from 'lucide-react';
+import { useRef, useEffect, useState } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
+import videoSrc from '../assets/Video.mp4';
 
 export function VideoHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       video.play().catch(() => {
         // Autoplay failed, which is expected in most browsers
-        setIsPlaying(false);
       });
     }
   }, []);
@@ -24,12 +23,6 @@ export function VideoHero() {
     }
   };
 
-  const handleWhatsApp = () => {
-    const phone = "595984123456";
-    const message = "Hola! Me interesa conocer más sobre los equipos audiovisuales de Levelpro.";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -42,10 +35,8 @@ export function VideoHero() {
           loop
           playsInline
           preload="auto"
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
         >
-          <source src="/src/assets/Video.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
         

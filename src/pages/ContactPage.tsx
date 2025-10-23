@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, Clock, MapPin, Send, MessageCircle, Video, Sparkles, CheckCircle, Zap, Globe, Users } from 'lucide-react';
-import qrCode from '../assets/qr.png';
+import qrCode from '../assets/QR.png';
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
