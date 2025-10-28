@@ -205,6 +205,29 @@ export function Header({ transparent = false }: HeaderProps) {
           </div>
         )}
       </div>
+      {/* Audio spectrum border */}
+      <div className={`relative h-[16px] overflow-hidden ${transparent ? 'opacity-70' : 'opacity-90'}`}>
+        <div className="sonotech-spectrum">
+          <svg viewBox="0 0 200 16" preserveAspectRatio="none" className="sonotech-wave-layer">
+            <path
+              className={`sonotech-wave-path ${transparent ? 'sonotech-wave--light' : 'sonotech-wave--dark'}`}
+              d="M0 8 C 10 2, 14 2, 20 8 S 30 14, 40 8 S 50 2, 60 8 S 70 14, 80 8 S 90 2, 100 8 S 110 14, 120 8 S 130 2, 140 8 S 150 14, 160 8 S 170 2, 180 8 S 190 14, 200 8"
+              />
+          </svg>
+          <svg viewBox="0 0 200 16" preserveAspectRatio="none" className="sonotech-wave-layer sonotech-wave-layer--slow">
+            <path
+              className={`sonotech-wave-path ${transparent ? 'sonotech-wave--light-secondary' : 'sonotech-wave--dark-secondary'}`}
+              d="M0 8 C 18 3, 36 3, 54 8 S 90 13, 108 8 S 144 3, 162 8 S 198 13, 216 8"
+            />
+          </svg>
+          <svg viewBox="0 0 200 16" preserveAspectRatio="none" className="sonotech-wave-layer sonotech-wave-layer--slowest">
+            <path
+              className={`sonotech-wave-path ${transparent ? 'sonotech-wave--light-tertiary' : 'sonotech-wave--dark-tertiary'}`}
+              d="M0 8 C 24 4, 48 4, 72 8 S 120 12, 144 8 S 192 4, 216 8"
+            />
+          </svg>
+        </div>
+      </div>
     </header>
   );
 }

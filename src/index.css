@@ -65,3 +65,46 @@ body {
 .hover-glow {
   @apply transition-shadow duration-300 hover:shadow-primary;
 }
+
+/* Espectro de audio tipo ondas (SVG animado) */
+@keyframes sonotechWaveScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.sonotech-spectrum {
+  position: relative;
+  height: 16px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sonotech-wave-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  animation: sonotechWaveScroll 16s linear infinite;
+}
+
+.sonotech-wave-layer--slow {
+  animation-duration: 18s;
+}
+
+.sonotech-wave-layer--slowest {
+  animation-duration: 22s;
+}
+
+.sonotech-wave-path {
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* Monocromo según fondo */
+.sonotech-wave--dark { stroke: rgba(0,0,0,0.35); }
+.sonotech-wave--dark-secondary { stroke: rgba(0,0,0,0.18); }
+.sonotech-wave--dark-tertiary { stroke: rgba(0,0,0,0.10); }
+.sonotech-wave--light { stroke: rgba(255,255,255,0.75); }
+.sonotech-wave--light-secondary { stroke: rgba(255,255,255,0.45); }
+.sonotech-wave--light-tertiary { stroke: rgba(255,255,255,0.28); }

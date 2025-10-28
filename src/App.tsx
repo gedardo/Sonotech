@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { Chatbot } from './components/Chatbot';
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
 import { ProductsPage } from './pages/ProductsPage';
@@ -29,7 +29,7 @@ function AppContent() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppFloat />
+      <Chatbot />
     </div>
   );
 }

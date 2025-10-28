@@ -26,8 +26,23 @@ export default defineConfig({
           'morado png.png',
           'negro png.png',
           'QR.png',
-          'Video.mp4'
+          'Video.mp4',
+          'botsonido.webp'
         ];
+        
+        // Copiar archivo de manifiesto desde public
+        const publicDir = resolve(__dirname, 'public');
+        const manifestSrc = resolve(publicDir, 'manifest.webmanifest');
+        const manifestDist = resolve(__dirname, 'dist/manifest.webmanifest');
+        
+        try {
+          if (existsSync(manifestSrc)) {
+            copyFileSync(manifestSrc, manifestDist);
+            console.log('Copiado: manifest.webmanifest');
+          }
+        } catch (error) {
+          console.error('Error copiando manifest.webmanifest:', error);
+        }
         
         // Copiar cada archivo
         filesToCopy.forEach(file => {

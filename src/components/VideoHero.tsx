@@ -78,7 +78,7 @@ export function VideoHero() {
       </div>*/}
 
       {/* Video Controls */}
-      <div className="absolute bottom-8 right-8 z-20">
+      <div className="absolute bottom-8 left-8 z-20">
         <button
           onClick={toggleMute}
           className="bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
