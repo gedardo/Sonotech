@@ -1,7 +1,8 @@
 import React from 'react';
 import blancoPng from '../assets/blanco png.png';
 import negroPng from '../assets/negro png.png';
-import moradoPng from '../assets/2morado png.png';
+import moradoPng from '../assets/morado png.png';
+import moradoPng2 from '../assets/morado png.png';
 
 interface LogoProps {
   variant?: 'white' | 'black' | 'purple' | 'auto';
@@ -17,7 +18,7 @@ export function Logo({ variant = 'auto', size = 'md', className = '' }: LogoProp
       case 'black':
         return negroPng;
       case 'purple':
-        return moradoPng;
+        return moradoPng2;
       case 'auto':
       default:
         return moradoPng; // Por defecto usamos el morado

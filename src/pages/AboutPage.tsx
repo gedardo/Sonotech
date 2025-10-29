@@ -93,7 +93,7 @@ export function AboutPage() {
 
               {/* Image */}
               <div className="relative">
-                <SmartLogo
+                <SmartLogo backgroundColor="light"
                   size="xl"
                   className="rounded-2xl shadow-2xl w-full h-full object-contain"
                 />

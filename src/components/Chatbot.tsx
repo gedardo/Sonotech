@@ -84,10 +84,32 @@ export function Chatbot() {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        return data.response || data.message || 'Gracias por tu consulta. ¿En qué más puedo ayudarte?';
+        // Verificar que la respuesta tenga contenido antes de parsear
+        const contentType = response.headers.get('content-type');
+        const text = await response.text();
+        
+        // Si la respuesta está vacía, usar fallback
+        if (!text || text.trim().length === 0) {
+          console.warn('Respuesta vacía del webhook');
+          return await getFallbackResponse(userInput);
+        }
+
+        // Intentar parsear JSON solo si el content-type indica JSON
+        if (contentType && contentType.includes('application/json')) {
+          try {
+            const data = JSON.parse(text);
+            return data.response || data.message || 'Gracias por tu consulta. ¿En qué más puedo ayudarte?';
+          } catch (parseError) {
+            console.error('Error parseando JSON:', parseError);
+            // Si falla el parseo pero hay texto, devolver el texto directamente
+            return text.trim() || await getFallbackResponse(userInput);
+          }
+        } else {
+          // Si no es JSON, devolver el texto directamente
+          return text.trim() || await getFallbackResponse(userInput);
+        }
       } else {
-        console.error('Error en webhook:', response.status);
+        console.error('Error en webhook:', response.status, response.statusText);
         return await getFallbackResponse(userInput);
       }
     } catch (error) {
