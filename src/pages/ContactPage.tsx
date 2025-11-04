@@ -65,13 +65,13 @@ export function ContactPage() {
 ${formData.message}
     `.trim();
 
-    const phone = "543813698748";
+    const phone = "543816463436";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(url, '_blank');
   };
 
   const handleWhatsAppClick = () => {
-    const phone = "543813698748";
+    const phone = "543816463436";
     const message = "Hola! Me gustaría obtener más información sobre Levelpro.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -177,7 +177,7 @@ ${formData.message}
                           className="text-xl font-bold text-green-600 hover:text-green-700 transition-all flex items-center space-x-3 bg-green-50 px-6 py-3 rounded-xl hover:bg-green-100 hover:scale-105 shadow-md"
                       >
                           <MessageCircle className="w-6 h-6" />
-                          <span>+54 381 369 8748</span>
+                          <span>+54 381 6463436</span>
                       </button>
                       </div>
 
@@ -253,11 +253,11 @@ ${formData.message}
                   
                   <div className="bg-white rounded-xl p-6 shadow-sm">
                     <a 
-                      href="tel:+543813698748"
+                      href="tel:3814241183"
                       className="block text-center text-xl font-bold text-primary-600 hover:text-primary-700 transition-all bg-primary-50 px-6 py-4 rounded-xl hover:bg-primary-100 hover:scale-105 shadow-md"
                     >
                       <Phone className="w-6 h-6 inline mr-2" />
-                      +54 381 369 8748
+                      381-4241183
                     </a>
                   </div>
                 </div>
@@ -297,7 +297,7 @@ ${formData.message}
                 {/* Map Container */}
                 <div className="relative rounded-xl overflow-hidden shadow-lg mb-6">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.123456789!2d-65.223456789!3d-26.823456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1f%3A0xf8606cd659b8e3f4!2sAv.%20Jujuy%201162%2C%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.915298950557!2d-65.2137436!3d-26.842646199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225df9be6a9469%3A0x9132ebf73b8d1b2c!2slevel%20pro!5e0!3m2!1ses-419!2sar!4v1762263253353!5m2!1ses-419!2sar"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
@@ -305,19 +305,8 @@ ${formData.message}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="rounded-xl"
-                    title="Ubicación de Levelpro - Av. Jujuy 1162, San Miguel de Tucumán"
+                    title="Ubicación de Levelpro - Jujuy 946, San Miguel de Tucumán"
                   ></iframe>
-                  
-                  {/* Map Overlay */}
-                  <div className="absolute top-4 left-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-5 h-5 text-primary-600" />
-                      <div>
-                        <p className="font-semibold text-gray-800 text-sm">Levelpro</p>
-                        <p className="text-xs text-gray-600">Av. Jujuy 1162</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Address Info */}
@@ -329,11 +318,11 @@ ${formData.message}
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Dirección completa</h4>
                       <p className="text-gray-600 text-sm mb-2">
-                        Av. Jujuy 1162, Italia 1351<br />
+                        Jujuy 946, Italia 1351<br />
                         San Miguel de Tucumán - Tucumán, Argentina
                       </p>
                       <a 
-                        href="https://maps.google.com/?q=Av.+Jujuy+1162,+San+Miguel+de+Tucumán,+Tucumán,+Argentina"
+                        href="https://maps.google.com/?q=Jujuy+946,+Italia+1351,+San+Miguel+de+Tucumán,+Tucumán,+Argentina"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
@@ -367,7 +356,8 @@ ${formData.message}
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1 text-sm">Contacto</h4>
                       <p className="text-gray-600 text-sm">
-                        +54 381 369 8748<br />
+                        +54 381 6463436<br />
+                        Tel fijo: 4241183<br />
                         contacto@levelpro.com.ar
                       </p>
                     </div>

@@ -3,7 +3,7 @@ import { SmartLogo } from '../components/Logo';
 
 export function AboutPage() {
   const handleMapClick = () => {
-    const address = "Av. Jujuy 1162, San Miguel de Tucumán, Argentina";
+    const address = "Jujuy 946, San Miguel de Tucumán, Argentina";
     const encodedAddress = encodeURIComponent(address);
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
     window.open(mapsUrl, '_blank');
@@ -127,26 +127,26 @@ export function AboutPage() {
                 {/* Interactive Map */}
                 <div className="relative h-96">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.123456789!2d-65.223456789!3d-26.823456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1f%3A0xf8606cd659b8e3f4!2sAv.%20Jujuy%201162%2C%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.915298950557!2d-65.2137436!3d-26.842646199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225df9be6a9469%3A0x9132ebf73b8d1b2c!2slevel%20pro!5e0!3m2!1ses-419!2sar!4v1762263253353!5m2!1ses-419!2sar"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Ubicación de Levelpro - Av. Jujuy 1162, San Miguel de Tucumán"
+                    title="Ubicación de Levelpro - Jujuy 946, San Miguel de Tucumán"
                   ></iframe>
                   
-                  {/* Map Overlay */}
+                  {/* Map Overlay 
                   <div className="absolute top-4 left-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <MapPin className="w-5 h-5 text-primary-600" />
                       <div>
                         <p className="font-semibold text-gray-800 text-sm">Levelpro</p>
-                        <p className="text-xs text-gray-600">Av. Jujuy 1162</p>
+                        <p className="text-xs text-gray-600">Jujuy 946</p>
                       </div>
                     </div>
-                  </div>
+                  </div>*/}
 
                   {/* Click to open in Google Maps */}
                   <div 
@@ -168,7 +168,7 @@ export function AboutPage() {
                         <MapPin className="w-6 h-6 text-red-600" />
                       </div>
                       <h4 className="font-semibold text-gray-900 mb-2">Dirección</h4>
-                      <p className="text-gray-600">Av. Jujuy 1162<br />Italia 1351<br />San Miguel de Tucumán - Argentina</p>
+                      <p className="text-gray-600">Jujuy 946<br />Italia 1351<br />San Miguel de Tucumán - Argentina</p>
                     </div>
                     <div>
                       <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4 mx-auto">
@@ -182,7 +182,7 @@ export function AboutPage() {
                         <Users className="w-6 h-6 text-blue-600" />
                       </div>
                       <h4 className="font-semibold text-gray-900 mb-2">Contacto</h4>
-                      <p className="text-gray-600">+54 381 369-8748<br />contacto@levelpro.com.ar</p>
+                      <p className="text-gray-600">+54 381 6463436<br />Tel fijo: 4241183<br />contacto@levelpro.com.ar</p>
                     </div>
                   </div>
                 </div>
